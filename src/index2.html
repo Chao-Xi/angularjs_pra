@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>Scope Function</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+	<script type="text/javascript" src="app2.js"></script>
+</head>
+<body ng-controller="MainController">
+  <p><input type="text" ng-model="itemIndex">
+  <!--ng-model double ways data binding-->
+   <input type="button" value="Get Item" ng-click="getItem()">
+  </p>
+  <p>Current Item:{{currentItem}}</p>
+</body>
+</html>

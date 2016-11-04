@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>Dot Notation</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+	<script type="text/javascript" src="app4.js"></script>
+</head>
+<body >
+<div ng-controller="ParentController">
+     <input type="text" ng-model="model.name">
+    <p>This is the parent: {{model.name}}</p>
+   <div ng-controller="ChildController">
+     <input type="text" ng-model="model.name">
+     <p>This is the Child: {{model.name}}</p>
+   </div>
+</div>
+</body>
+</html>
