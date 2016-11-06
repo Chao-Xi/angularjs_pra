@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>Service</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+	<script type="text/javascript" src="app6.js"></script>
+</head>
+<body>
+     <div ng-controller="ParentController as parent">   
+      <p>This is the parent:{{parent.message}}</p>
+      
+       <div ng-controller="FirstChild as first">
+       <p>This is the parent:{{parent.message}}</p>
+       <p>This is the first child: {{first.message}}</p>
+       </div>
+
+       <div ng-controller="SecondChild as second">
+       <p>This is the parent: {{parent.message}}</p>
+       <p>This is the first child: {{ second.message}}</p>
+       <p>Randomize: {{second.value}}</p>
+      </div>  
+
+     </div>
+
+    
+
+</body> 
+</html>

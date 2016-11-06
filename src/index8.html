@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>Filter</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+	<script type="text/javascript" src="app8.js"></script>
+</head>
+<body>
+    <div ng-controller="MainController as main"> 
+       <ul ng-repeat="user in main.users | orderBy:'Balance' |limitTo:2:3">
+        <li>Name: {{user.Name}}</li>
+        <li>Account: {{user.Account}}</li>
+        <li>Balance: {{user.Balance}}</li>
+        <li>Gender: {{user.Gender}}</li>
+       </ul>
+</body> 
+</html>

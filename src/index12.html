@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>Filter</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+	<script type="text/javascript" src="app12.js"></script>
+	<link rel="stylesheet" href="main.css"/>
+</head>
+<body>
+    <div ng-controller="MainController as main"> 
+     <form name="userForm" novalidate>
+     <table class="user-form">
+      
+      <tr>
+      <td>First Name:</td>
+      <td><input type="text" ng-model="main.user.firstname" required></td>
+      </tr>
+
+      <tr>
+      <td>Last Name:</td>
+      <td><input type="text" ng-model="main.user.lasttname" required></td>
+      </tr>
+
+       <tr>
+      <td>Phone (10 digits):</td>
+      <td><input type="text" ng-model="main.user.phone" required ng-minlength="10"></td>
+      </tr>
+
+       <tr>
+      <td>Email:</td>
+      <td><input type="email" ng-model="main.user.email" required></td>
+      </tr>
+      
+      <tr>
+      <td>Zip Code:</td>
+      <td><input type="text" ng-model="main.user.zip" required ng-pattern="/\d{5}([\-]\d{4})?/"></td>
+      </tr>
+
+      <tr>&nbsp;</tr>
+      <td><button ng-click="main.submitForm(userForm)">Submit</button></td>
+     </table>
+     </form>
+
+     <p>{{ main.user}}</p>
+    </div>
+</body> 
+</html>

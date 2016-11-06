@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>JSON</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+	<script type="text/javascript" src="app10.js"></script>
+</head>
+<body>
+    <div ng-controller="MainController as main"> 
+       <p>Now: {{main.now | date:'short'}}</p>
+       <p>Now: {{main.now | date:'medium'}}</p>
+       <p>Birthday: {{main.user.birthday | date:'MMMM dd, yyyy'}}</p>
+       <p>Last Login: {{main.user.lastLogin | date:'mediumDate'}}</p>
+</body> 
+</html>
