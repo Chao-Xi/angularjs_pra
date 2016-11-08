@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>Changing the default braces</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+	<script type="text/javascript" src="app15.js"></script>
+	<link rel="stylesheet" href="main1.css">
+</head>
+<body>
+   <h2>Changing the default braces</h2>
+   <div ng-controller="MainController as main">
+     {{main.helloMessage}}
+     <br/>
+     (~ main.helloMessage~)
+   </div>
+</body>
+</html>

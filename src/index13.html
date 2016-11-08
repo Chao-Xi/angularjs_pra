@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>CSS</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+	<script type="text/javascript" src="app13.js"></script>
+	<link rel="stylesheet" href="main0.css">
+</head>
+<body>
+
+   <div ng-controller="MainController as main">
+    {{main.hello}}
+
+    <form name="testForm">
+    <p>Enter name: <input type="text" ng-model="main.names"></p>
+    </form>
+   </div>
+</body>
+</html>

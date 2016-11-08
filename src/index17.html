@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>Register a Listener</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+	<script type="text/javascript" src="app17.js"></script>
+	<link rel="stylesheet" href="main1.css">
+</head>
+<body>
+   <h2>Register a Listener</h2>
+   <div ng-controller="MainController as main">
+    <ul>
+      <li ng-repeat="sentence in main.comefrom">
+        {{sentence}}
+      </li>
+    </ul> 
+   </div> 
+</body>
+</html>
