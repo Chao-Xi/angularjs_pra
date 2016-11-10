@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>ng-show</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+	<script type="text/javascript" src="app22.js"></script>
+	<link rel="stylesheet" href="main1.css">
+</head>
+<body>
+   <h2>ng-show</h2>
+   <div ng-controller="MainController as main">
+       <p>Show first Item?
+       <input type="radio" name="first" ng-model="main.showFirstItem" ng-value="true">Yes
+       <input type="radio" name="first" ng-model="main.showFirstItem" ng-value="false">No
+        </p>
+        
+        <p>Show Second Item?
+       <input type="radio" name="second" ng-model="main.showSecondItem" ng-value="true">Yes
+       <input type="radio" name="second" ng-model="main.showSecondItem" ng-value="false">No
+        </p>
+        
+       <p>Hide Third Item?
+       <input type="radio" name="third" ng-model="main.hideThirdItem" ng-value="true">Yes
+       <input type="radio" name="third" ng-model="main.hideThirdItem" ng-value="false">No
+        </p>
+
+       <div ng-show="main.showFirstItem">This is the first item.</div>
+
+       <div ng-show="main.isSecondItemShowing()">This is second item.</div>
+
+       <div ng-hide="main.hideThirdItem">This is Third item.</div>
+  </div> 
+</body>
+</html>

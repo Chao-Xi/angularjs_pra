@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>ng-clickordouble</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+	<script type="text/javascript" src="app24.js"></script>
+	<link rel="stylesheet" href="main1.css">
+</head>
+<body>
+   <h2>ng-click or ng-doubleclick</h2>
+   <div ng-controller="MainController as main">
+      <button ng-click="main.doClick()">Click</button>
+
+      <button ng-dblclick="main.doDoubleClick()">Double-Click</button>
+      
+      <button ng-click="main.doClick()" ng-dblclick="main.doDoubleClick()">Click or Double-Click</button>
+      <hr/>
+
+      <p># clicks:{{main.clickCount}}</p> 
+      <p># double-clicks:{{main.doubleClickCount}}</p> 
+   </div> 
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>ng-click</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+	<script type="text/javascript" src="app21.js"></script>
+	<link rel="stylesheet" href="main1.css">
+</head>
+<body>
+   <h2>ng-click</h2>
+   <div ng-controller="MainController as main">
+     <P><button ng-click="main.updateClickCount(5)">ng-click</button></P>
+     <hr/>
+     <p>Clicks: {{main.clickCount}}</p>
+   </div> 
+</body>
+</html>

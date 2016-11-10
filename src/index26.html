@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>ng-mouseover&mousemove</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+	<script type="text/javascript" src="app26.js"></script>
+	<link rel="stylesheet" href="main1.css">
+</head>
+<body>
+   <h2>ng-mouseover&mousemove</h2>
+   <div ng-controller="MainController as main">
+    <img src="le.jpg" ng-mouseover="main.doMouseOver($event)" ng-mousemove="main.doMouseMove($event)" width="384" height="288">
+    <hr/>
+    <p>{{'Mouse over count: '+main.mouseOverCount}}</p>
+    <p>{{'Mouse move count: '+main.mouseMoveCount}}</p>
+    <p>Mouse X/Y: {{main.mouseX}} / {{main.mouseY}}</p>
+  </div> 
+</body>
+</html>
