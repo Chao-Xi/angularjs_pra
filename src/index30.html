@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>ng-style</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="../libs/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="app30.js"></script>
+	<link rel="stylesheet" href="main2.css">
+</head>
+<body>
+   <h2>ng-style</h2>
+   <div ng-controller="MainController as main">
+    <p ng-style="main.style1">This is the first style</p>
+    <p ng-style="main.style2">This is the second style</p>
+    
+    <hr/>
+
+    <p>
+      <button ng-click="main.enableStyle()">Enable Style</button>
+      <button ng-click="main.disableStyle()">Disable Style</button>
+    </p> 
+
+  </div> 
+</body>
+</html>

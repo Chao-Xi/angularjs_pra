@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>ng-src/href</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="../libs/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="app33.js"></script>
+	<link rel="stylesheet" href="main2.css">
+</head>
+<body>
+   <h2>ng-src/href</h2>
+   <div ng-controller="MainController as main">
+    <p><img ng-src="{{main.imageUrl}}" width="384" height="288"></p>
+    <p><a href="{{main.linkUrl}}" target="_blank">Go to Angularjs</p>
+  </div> 
+</body>
+</html>

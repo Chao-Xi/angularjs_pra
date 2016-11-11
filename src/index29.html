@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>html-binding</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="../libs/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="app29.js"></script>
+	<link rel="stylesheet" href="main2.css">
+</head>
+<body>
+   <h2>HTML-BINDING</h2>
+   <div ng-controller="MainController as main">
+    <p>{{main.htmlData}}</p>
+    <p>{{main.dangerousScript}}</p>
+    <p>{{main.dangerousCSS}}</p>
+    <p>&nbsp;</p>
+    <hr/>
+    <p>&nbsp;</p>
+    <p ng-bind-html="main.htmlData"></p>
+    <p ng-bind-html="main.dangerousScript"></p>
+    <p ng-bind-html="main.dangerousCSS"></p>
+    <p ng-bind-html="main.trustedCSS"></p>
+    <p ng-bind-html="main.trustedScript"></p>
+  </div> 
+</body>
+</html>

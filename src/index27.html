@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>ng-change</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+	<script type="text/javascript" src="app27.js"></script>
+	<link rel="stylesheet" href="main2.css">
+</head>
+<body>
+   <h2>ng-change</h2>
+   <div ng-controller="MainController as main">
+
+   <p>We have your full name as '{{main.fullName}}'</p>
+    <p>&nbsp;</p>
+    <p>For your conformation please re-enter your full name:</p>
+    <p><input type="text" ng-change="main.doChange()" ng-model="main.fullNameConfirm"></p>
+    <hr/>
+
+    <p>{{main.message}}</p>
+  </div> 
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>ng-bind</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+	<script type="text/javascript" src="app28.js"></script>
+	<link rel="stylesheet" href="main2.css">
+</head>
+<body>
+   <h2>ng-bind</h2>
+   <div ng-controller="MainController as main">
+    
+     <p>{{main.standardBind}}</p>
+     <p ng-bind="main.standardBind"></p>
+     <p>&nbsp;</p>
+     
+     <p>{{main.firstTemplateBinding}} and {{main.secondTemplateBinding}}</p> 
+     <P ng-bind-template="{{main.firstTemplateBinding}} and {{main.secondTemplateBinding}}"></P>
+     <p>&nbsp;</p> 
+
+     <p ng-non-bindable>{{main.nonBindable}}</p>
+  </div> 
+</body>
+</html>
