@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>Repalce Directive Elements</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="../libs/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="app42.js"></script>
+	<link rel="stylesheet" href="main3.css">
+
+</head>
+<body>
+   <h2>Repalce Directive Elements/ Adding controllers</h2>
+   <div ng-controller="MainController as main">
+    <tst-vehicle-view item="firstItem"></tst-vehicle-view>
+    <tst-vehicle-view item="secondItem"></tst-vehicle-view>
+  </div> 
+</body>
+</html>

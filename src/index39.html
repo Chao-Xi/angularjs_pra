@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>Invoking outer function</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="../libs/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="app39.js"></script>
+	<link rel="stylesheet" href="main3.css">
+</head>
+<body>
+   <h2>Invoking outer function</h2>
+   <div ng-controller="MainController as main">
+    <p>Random numbers:
+    <my-directive2 count="3" on-save="main.saveFirst()" generator-function="main.randomNumbers(count)"></my-directive2>
+    </p>
+
+     <p>Sequential numbers:
+    <my-directive2 count="3" on-save="main.saveSecond()" generator-function="main.sequentialNumbers(count)"></my-directive2>
+    </p>
+  </div> 
+</body>
+</html>

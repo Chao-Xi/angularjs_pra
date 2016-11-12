@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>Isolate-directive</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="../libs/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="app37.js"></script>
+	<link rel="stylesheet" href="main3.css">
+</head>
+<body>
+   <h2>Isolate-directive</h2>
+   <div ng-controller="MainController as main">
+     <my-directive2 ></my-directive2>
+     <my-directive2 item="firstItem"></my-directive2>
+     <my-directive2 item="secondItem"></my-directive2>
+  </div> 
+</body>
+</html>

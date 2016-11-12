@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>Using short hand notation</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="../libs/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="app41.js"></script>
+	<link rel="stylesheet" href="main3.css">
+  <style>
+     p{
+      border:1px solid #000000;
+     }
+     .area-on{
+      border:1px solid #ff0000;
+     }
+  </style>
+</head>
+<body>
+   <h2>Using short hand notation</h2>
+   <div ng-controller="MainController as main">
+    
+    <p tst-hot-area>This is test hot area</p> 
+  </div> 
+</body>
+</html>
