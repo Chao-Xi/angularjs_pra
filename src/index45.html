@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>Working with Browser</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="../libs/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="app45.js"></script>
+	<link rel="stylesheet" href="main4.css">
+   <style type="text/css">
+     .rollover-box{
+        width:100px;
+        height: 100px;
+        background-color: #eeeeee;
+        border:1px solid #999999;
+     }
+   </style>
+</head>
+<body>
+   <h2>Working with Browser</h2>
+   <div ng-controller="MainController as main">
+        <tst-rollover label="This is my content" active-color="#ddffff"></tst-rollover>
+        <tst-rollover label="This is more content" active-color="#ffffdd"></tst-rollover> 
+  </div> 
+</body>
+</html>

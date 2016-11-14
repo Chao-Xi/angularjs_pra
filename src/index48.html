@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>$anchorScroll</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="../libs/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="app48.js"></script>
+	<link rel="stylesheet" href="main4.css">
+   <style type="text/css">
+
+   </style>
+</head>
+<body>
+   <h2>$anchorScroll</h2>
+   <div ng-controller="MainController as main">
+     <a id="topLink" href="" ng-click="main.jumpToBottom()">This is top.click to go to the bootm.</a>
+     <div style="height: 1000px"></div>
+     <a id="bottomLink" href="" ng-click="main.jumpToTop()">This is bottom, click go to the top</a>
+  </div> 
+</body>
+</html>

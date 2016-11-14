@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>Custom Service</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="../libs/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="../libs/angular-cookies.js"></script>
+	<script type="text/javascript" src="app52.js"></script>
+	<link rel="stylesheet" href="main4.css">
+   <style type="text/css">
+
+   </style>
+</head>
+<body>
+   <h2> Custom Service</h2>
+   <div ng-controller="MainController as main">
+    <p>Edit from service:<input type="text" ng-model="main.model.user.name"></p>
+    <p><button ng-click="main.model.sayHello()">Say Hello</button></p>
+
+    <div ng-controller="FirstController as first">
+        
+        <p>Edit first:<input type="text" ng-model="first.user.name"></p>
+        <hr/>
+        <p>Shared From service:{{first.model.user.name}}</p>
+        <p>From first controller:{{first.user.name}}</p>
+        <p>From seond controller:{{second.user.name}}</p>
+        <p><button ng-click="first.model.sayHello()">Say Hello</button></p>
+    </div>
+
+       <div ng-controller="SecondController as second">
+        
+        <p>Edit first:<input type="text" ng-model="second.user.name"></p>
+        <hr/>
+        <p>Shared From service:{{second.model.user.name}}</p>
+        <p>From first controller:{{first.user.name}}</p>
+        <p>From seond controller:{{second.user.name}}</p>
+        <p><button ng-click="second.model.sayHello()">Say Hello</button></p>
+    </div>
+
+  </div> 
+</body>
+</html>

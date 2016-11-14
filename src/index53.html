@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>$oberserve</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="../libs/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="../libs/angular-cookies.js"></script>
+	<script type="text/javascript" src="app53.js"></script>
+	<link rel="stylesheet" href="main4.css">
+   <style type="text/css">
+     .freezing{
+      color:blue;
+     }
+     .normal{
+      color:green;
+     }
+     .hot{
+      color:red;
+     }
+   </style>
+</head>
+<body>
+   <h2>$oberserve</h2>
+   <div ng-controller="MainController as main">
+      <div tst-thermometer temperature="{{main.currentTemperature}}"></div>
+   
+    <hr/>
+
+    <p>Please enter the current termperature:</p>
+    <p><input type="text" ng-model="main.currentTemperature"></p>
+  </div> 
+</body>
+</html>

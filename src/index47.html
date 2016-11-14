@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>ng-List</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="../libs/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="app47.js"></script>
+	<link rel="stylesheet" href="main4.css">
+   <style type="text/css">
+
+   </style>
+</head>
+<body>
+   <h2>ng-List</h2>
+   <div ng-controller="MainController as main">
+     <p>Edit names:</p>
+     <p><input type="text" ng-list="|" ng-model="main.names"></p>
+     <hr/>
+
+     <p>Binding to names:{{main.names}}</p>
+     <p>Type of name is:{{main.getType(main.names)}}</p>
+     <p>Firt name in array:{{main.names[0]}}</p>
+  </div> 
+</body>
+</html>

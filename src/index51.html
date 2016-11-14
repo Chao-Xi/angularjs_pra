@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+	<title>$cookieStore</title>
+	<script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="../libs/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="../libs/angular-cookies.js"></script>
+	<script type="text/javascript" src="app51.js"></script>
+	<link rel="stylesheet" href="main4.css">
+   <style type="text/css">
+
+   </style>
+</head>
+<body>
+   <h2>$cookieStore</h2>
+   <div ng-controller="MainController as main">
+   <p>Key: <input type="text" ng-model="main.itemKey"></p>
+   <p>Value: <input type="text" ng-model="main.itemValue"></p>
+   <p><button ng-click="main.addItem(main.itemKey,main.itemValue)">Add item</button></p>
+   <hr/>
+   
+   <p>
+   <p>Get Item</p>
+   <input type="text" ng-model="main.getKey">
+   <button ng-click="main.getItem(main.getKey)">Get</button>
+   </p>
+   
+
+   <p>
+   <p>Remove Item</p>
+   <input type="text" ng-model="main.removeKey">
+   <button ng-click="main.removeItem(main.removeKey)">Remove</button>
+   </p>
+   
+   <hr/>
+   <p>Cookie value:</p>
+   <ul>
+   <li ng-repeat="key in main.keys">
+     {{key}}: {{main.getItemValue(key)}}
+   </li>
+   </ul>
+
+   <hr/>
+   <p>Current item:</p>
+   <p>{{main.currentItem}}</p>
+  </div> 
+</body>
+</html>

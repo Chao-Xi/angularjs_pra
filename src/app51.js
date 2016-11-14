@@ -1,0 +1,34 @@
+var app=angular.module('myApp',['ngCookies']);
+
+app.controller('MainController',function($cookies)
+     {
+        var vm=this;
+
+        vm.keys=[];
+
+        vm.addItem=function(itemKey,itemValue)
+        {
+          vm.keys.push(itemKey);
+          $cookies.put(itemKey, itemValue);
+        }
+
+        vm.getItem=function(itemKey)
+        {
+          vm.currentItem=$cookies.get(itemKey);
+        }
+        
+        vm.getItemValue=function(itemKey)
+        {
+         return $cookies.get(itemKey);
+        }
+
+        vm.removeItem=function(itemKey)
+        {
+          vm.keys=vm.keys.filter(function(key){
+            return (key!==itemKey);
+          });
+          $cookies.remove(itemKey);
+        }
+
+     }
+  )
