@@ -1,0 +1,119 @@
+1.
+  var app=angular.module('myApp',[]); js
+  html: <html ng-app="myApp">
+  js:app.controller($scope,function($scope)
+     {
+  
+         $scope.message="Hello";
+         $scope.sayHello=function(name)
+         {
+         	return $scope.message+" "+name;
+         }
+     }
+	);
+
+	$scope.functionname=function(){};
+	$scope.variable="";
+    {{ message }}
+    {{ sayHello('Alex')}}
+
+ 2.js: function($scope,$interval)
+       {
+          $interval(function(){
+           $scope.itemIndex=Math.round(Math.random()*(items.length-1));
+           $scope.getItem();
+         },2000);
+       } 
+
+    ng-click="getItem()"
+
+ 3.html: {{ :: }}
+         {{ arr[1] }}
+         {{ a*b }} 
+         {{ a>50000}} true or false   
+          <p>Enter Width:<input type="number" ng-model="pWidth"></p>
+          <p style="background:#ff0000;width:{{pWidth}}px">
+      	  This is a dynamic length paragraph
+          </p> 
+
+4. angular json
+   
+   $scope.model={
+        name:'John smith'
+      } 
+
+   html:  <input type="text" ng-model="model.name">
+          <p>This is the parent: {{model.name}}</p> 
+
+5. app.service('SharedService',function(){
+	return {name: 'Billy Joe'};
+   }) 
+   //service is function with data
+
+   app.controller('FirstController',function($scope,SharedService){
+     $scope.model=SharedService;
+    });
+
+     <input type="text" ng-model="model.name"> ng-model like data uploader       
+      <p>This is the first Controller:{{model.name}}</p>
+     </div>
+
+ 6. this
+     $interval(function(){
+       this.value=Math.round(Math.random()*10000)+1;
+     }.bind(this),2000);
+    
+    $scope.$watch('second.value',function(newValue, oldValue)
+     {
+        console.log('New:',newValue,' Old',oldValue);
+    });
+
+    this $watch
+
+     html <div ng-controller="FirstChild as first"> 
+     {{first.message}}
+
+ 7. Filter: 
+    | uppercase |lowercase  |currency
+
+    self-define
+    app.filter('capitalize',function(){
+             
+             return function(value)
+             {
+             	var result=null;
+             	var words=value.split(" ");
+             	words.forEach(function(item){
+                  if(result)
+                  {
+                  	result+=" ";
+                  }
+                  else
+                  {
+                  	result=" ";
+                  }	
+                    result+=item.substr(0,1).toUpperCase()+item.substr(1).toLowerCase();
+                  });  
+                  return result;      
+               }  
+
+           });
+
+8. js: this.user=[{}, {}, {}, {}]
+   html: <ul ng-repeat="user in main.users | orderBy:'Balance' |limitTo:2:3">
+
+9.  {{main.users | json }} => return json data
+
+10. dateTime filter 
+    this.now=new Date(); 
+    
+    html:    <p>Now: {{main.now | date:'short'}}</p>
+             <p>Now: {{main.now | date:'medium'}}</p>
+             <p>Birthday: {{main.user.birthday | date:'MMMM dd, yyyy'}}</p>
+             <p>Last Login: {{main.user.lastLogin | date:'mediumDate'}}</p> 
+
+
+
+        
+                    
+
