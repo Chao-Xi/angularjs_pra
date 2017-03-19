@@ -1,0 +1,205 @@
+1.app.filter('yesorno', function(){
+    
+    return function(value)
+    {
+      if(value=true)
+      {
+        return "yes";
+      }else if(value==false)
+      {
+        return "no";
+      }else
+      {
+        return "unknown";
+      }
+    } 	
+});
+
+
+html:  <p>Is Active? {{main.user.isActive | yesorno}}</p>
+        <select ng-model="main.user.favoriteFruit" ng-options="fruit for fruit in main.fruitList">
+        Tag: select 
+        ng-model: controller.datas
+        ng-options: fruit for fruit in array
+        
+        checkbox
+        <input type="checkbox" ng-model="main.user.isActive">
+        
+        radio
+        <input type="radio" ng-model="main.user.isActive" ng-value="true">Yes
+
+
+2.Form
+   
+   js. 
+   this.submitForm=function(form)
+  {
+    if(form.$valid)
+    {
+     window.alert("Passed");
+    }else
+    {
+      window.alert('Failed');
+    } 	
+  }
+
+  html:
+  <form name="userForm" novalidate>
+  <table class="user-form">
+
+      <tr>
+      <td>Phone (10 digits):</td>
+      <td><input type="text" ng-model="main.user.phone" required ng-minlength="10"></td>
+      </tr>
+
+       <tr>
+      <td>Email:</td>
+      <td><input type="email" ng-model="main.user.email" required></td>
+      </tr>
+      
+      <tr>
+      <td>Zip Code:</td>
+      <td><input type="text" ng-model="main.user.zip" required ng-pattern="/\d{5}([\-]\d{4})?/"></td>
+      </tr>
+
+      <tr>&nbsp;</tr>
+      <td><button ng-click="main.submitForm(userForm)">Submit</button></td>
+      </table>
+      </form>
+
+     ng-minlength ng-model  ng-pattern="/\d{5}([\-]\d{4})?/" 
+     ng-click="main.submitForm(userForm)"
+
+     This "userForm" is from <table class="user-form">
+
+13. js:
+       this.hello  this.name="";
+    html:
+    <form name="testForm">
+    <p>Enter name: <input type="text" ng-model="main.names"></p>
+    </form>
+
+    div.ng-scope{
+	background:#ddddff;
+      }
+    /**ng-scope automatically added to the class="ng-binding" */
+
+    .ng-binding{
+	color:#ff0000;
+     }
+
+    input.ng-pristine{
+	background:#ddffdd;
+     }
+
+    input.ng-dirty{
+	background:#ffdddd;
+   }  
+
+
+14. js
+    
+    this.items=[{name:, type:}, {}, {}, {}]
+    this.selectedType=""
+
+    html:
+    <select ng-model="main.selectedType.type">
+    <option value="">All</option>
+    <option value="diary">Dairy</option>
+    </select>
+
+    ng-model main.selectedType.type=value
+
+    <li ng-repeat="item in main.items | filter:main.selectedType"></li> 
+
+
+15. app.config(function($interpolateProvider)
+    {
+      $interpolateProvider.startSymbol('(~'); 
+      $interpolateProvider.endSymbol('~)'); 
+    });
+
+    (~ main.helloMessage~)   
+
+    angularjs {{}} config
+
+16. 
+     var vm=this;
+     
+     //$swatch() watch the controller.attribute
+     $scope.$watch('main.name',function(newValue, oldValue)
+    {
+       console.log('newValue:', newValue, ',oldValue', oldValue);      
+       
+       if(newValue==vm.specialName)
+       {
+           vm.message="Hello, we\'ve been waaiting for you.";
+       }	
+       else
+      {
+       	vm.message='';
+      }
+    });
+    
+
+    {{main.name}}  {{main.message}}
+
+
+17.
+   var vm=this; 
+   var names=[];
+   var city=[];
+
+    vm.comefrom=[];
+   
+    names=[];
+    //forEach(names, function(name){});
+
+    angular.forEach(names,function(name)
+    {
+       var randomCity=cities[Math.floor(Math.random()*cities.length)];
+       var sentence=name+' comes from '+randomCity; 
+       vm.comefrom.push(sentence);
+    }
+
+    arr.length * math.random()
+    vm.comefrom.push()
+
+    html: 
+    <li ng-repeat="sentence in main.comefrom">
+    {{sentence}}
+    </li>
+
+ 18. js:
+      this.data=new Date;
+      this.results=[];
+                
+      var isObject="Is Object? "+angular.isObject(this.data); 
+      var isArray="Is Array? "+angular.isArray(this.data); 
+      var isString="Is String? "+angular.isString(this.data); 
+      var isNumber="Is Number? "+angular.isNumber(this.data); 
+      var isDate="Is Date? "+angular.isDate(this.data); 
+      var isElement="Is Element? "+angular.isElement(this.data); 
+      var isDefined="Is Defined? "+angular.isDefined(this.data); 
+      var isUndefined="Is Undefined? "+angular.isUndefined(this.data); 
+               
+      this.results.push(isObject, isArray, isString, isNumber, isDate, isElement, isDefined, isUndefined);
+
+      <li ng-repeat="result in main.results">
+      {{ result }} 
+      </li>
+ 
+ 19.  js: this.cars=[{}, {}, {}, {}]
+      html: <ul ng-repeat="car in main.cars">
+            <li>{{cars.make}}</li> 
+            </ul> 
+
+ 20.
+     js:   this.viewType="partials/cars-short.html";
+     html:  <div ng-include src="main.viewType"></div>
+  
+
+
+
+
+       

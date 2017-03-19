@@ -1,0 +1,166 @@
+1. vm.updateClickCount=function(amount)
+  {
+      vm.clickCount+=amount; 
+  }
+
+  <button ng-click="main.updateClickCount(5)">ng-click</button>
+
+
+2.    vm.showFirstItem=true;
+      vm.showSecondItem=false;
+      vm.hideThirdItem=true;
+
+       vm.isSecondItemShowing=function()
+       {
+         return vm.showSecondItem;
+       }  
+
+
+    html:
+    <input type="radio" name="first" ng-model="main.showFirstItem" ng-value="true">Yes
+    <input type="radio" name="second" ng-model="main.showSecondItem" ng-value="true">Yes
+    <input type="radio" name="third" ng-model="main.hideThirdItem" ng-value="true">Yes
+        
+    <div ng-show="main.isSecondItemShowing()">This is second item.</div>
+
+    ng-model is two ways databinding
+
+
+3.   app.run(function($rootScope){})  
+     app.controller('ControllerName',function($scope){});
+
+     The $scope's data overwrite the $rootscope data
+
+4.   js:
+     this.doClick=function()
+     {
+       this.clickCount=this.clickCount+1;	
+     }
+               
+     this.doDoubleClick=function()
+     {
+      this.doubleClickCount=this.doubleClickCount+1; 
+     }
+
+    <button ng-click="main.doClick()">Click</button>
+    <button ng-dblclick="main.doDoubleClick()">Double-Click</button>
+    <button ng-click="main.doClick()" ng-dblclick="main.doDoubleClick()">Click or Double-Click</button>
+
+5.   js:
+      this.doMouseDown=function(event)
+      {
+        console.log(event);
+        this.mouseDownCount++;
+     } 
+
+     this.doMouseUp=function(event)
+     {
+         console.log(event);
+          this.mouseUpCount++;
+     } 
+     
+       <img src="le.jpg" ng-mousedown="main.doMouseDown($event)" ng-mouseup="main.doMouseUp($event)" width="384" height="288">
+
+      ng-mousedown
+      ng-mouseup  
+
+6.  js:
+    this.doMouseOver=function(event)
+    {
+         console.log(event);
+         this.mouseOverCount++;
+    }; 
+
+     this.doMouseMove=function(event)
+     {
+         console.log(event);
+         this.mouseMoveCount++;
+         this.mouseX=event.offsetX;
+         this.mouseY=event.offsetY;
+     }
+
+      <img src="le.jpg" ng-mouseover="main.doMouseOver($event)" ng-mousemove="main.doMouseMove($event)" width="384" height="288">
+      <p>{{'Mouse over count: '+main.mouseOverCount}}</p>
+      <p>{{'Mouse move count: '+main.mouseMoveCount}}</p>
+      <p>Mouse X/Y: {{main.mouseX}} / {{main.mouseY}}</p>
+
+      ng-mouseover="main.doMouseOver($event)"
+      ng-mousemove="main.doMouseOver($event)"
+
+      ng-mouseover ng-mousemove
+
+ 7. conformation
+    
+     this.doChange=function()
+    {
+      if(this.fullName===this.fullNameConfirm)
+      {
+         this.message="Thank you for your confirming your name";
+       } else
+      {
+         this.message=''; 
+      }    
+    }
+
+    <p><input type="text" ng-change="main.doChange()" ng-model="main.fullNameConfirm"></p> 
+
+    ng-change="main.doChange()"
+    ng-model="main.fullNameConfirm" what kind if data you wanna input
+
+  8.
+     <p ng-bind="main.standardBind"></p>
+     <p>{{main.firstTemplateBinding}} and {{main.secondTemplateBinding}}</p> 
+     <P ng-bind-template="{{main.firstTemplateBinding}} and {{main.secondTemplateBinding}}"></p>
+     <p ng-non-bindable>{{main.nonBindable}}</p> 
+
+     ng-bind ng-bind-template ng-non-bindtable
+
+  9.
+    angular-sanitize.min.js
+
+    var app=angular.module('myApp',['ngSanitize']);
+
+    function($sce){           
+    this.htmlData="Hello from <strong>Angularjs</strong>";
+    this.dangerousCSS='<span class="some-class" style="color:red">Hello from dangerous css</span>';
+    this.trustedCSS=$sce.trustAsHtml('<span class="some-class" style="color:red">Hello from trusted css</span>')
+    this.trustedScript=$sce.trustAsHtml("<script>console.log(\'Do something good\');</script>Hello from the safe script");
+                }
+    
+    $sce.trustAsHtml('')
+    <script>console.log(\'Do something good\');</script>
+    
+    {{}}->is wrong, cannot be output as html file
+    <p ng-bind-html="main.htmlData"></p>
+
+ 10.  css style ng-style
+      this.enableStyle=function ()
+      {
+         this.style1={
+                	  color:'red',
+                	  fontSize:'20px'
+                	 }
+
+         this.style2={
+                	  color:'blue',
+                	  fontSize:'10px'
+                	}}
+               
+
+        this.disableStyle=function ()
+        {
+          this.style1=null;
+          this.style2=null;
+        }
+       
+
+       <p ng-style="main.style1">This is the first style</p>
+       <p ng-style="main.style2">This is the second style</p>
+
+       <button ng-click="main.enableStyle()">Enable Style</button>
+       <button ng-click="main.disableStyle()">Disable Style</button>
+
+       ng-click="main.enableStyle()  / disableStyle() "
+      
+            
+
